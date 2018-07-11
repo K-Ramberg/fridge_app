@@ -1,0 +1,10 @@
+<h1>All Fridges</h1>
+<ul>
+<% @fridges.each do |fridge|%>
+    <li>
+    <a href='/fridges/<%= fridge.id %>' ><%= fridge.brand%></a>
+    <%= fridge.location%>
+    <%= fridge.size%>
+    </li>
+<% end %>
+</ul>
