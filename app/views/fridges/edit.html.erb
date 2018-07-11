@@ -1,2 +1,13 @@
 <h1>Fridges#edit</h1>
-<p>Find me in app/views/fridges/edit.html.erb</p>
+<%= form_for @fridge do |f| %>
+  <%= f.label :brand %>
+  <%= f.text_field :brand %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.label :size %>
+  <%= f.text_field :size %>
+
+  <%= f.submit "save" %>
+<% end %>

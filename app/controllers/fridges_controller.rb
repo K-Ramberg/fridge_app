@@ -5,16 +5,19 @@ class FridgesController < ApplicationController
 
   def show
     @fridge = Fridge.find(params[:id])
-    puts @fridge.brand
   end
 
   def new
-  end
-
-  def edit
+    @fridge = Fridge.new
   end
 
   def create
+    @fridge = Fridge.create(fridge_params)
+    redirect_to "/fridges/#{@fridge.id}"
+  end
+
+  def edit
+    @fridge = Fridge.find(params[:id])
   end
 
   def update

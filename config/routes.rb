@@ -13,12 +13,14 @@ Rails.application.routes.draw do
   get 'food/create'
   get 'food/update'
   get 'food/destroy'
-  get '/fridges', to: 'fridges#index'
-  get 'fridges/:id', to: 'fridges#show'
-  get 'fridges/new', to: 'fridges#new'
-  get 'fridges/:id/edit', to: 'fridge#edit'
-  post 'fridges/create', to: 'fridges#create'
-  put 'fridges/update', to: 'fridges#update'
-  delete 'fridges/destroy', to: 'fridges#destroy'
+  # get 'fridges', to: 'fridges#index'
+  # get 'fridges/new', to: 'fridges#new'
+  # get 'fridges/:id', to: 'fridges#show'
+  # get 'fridges/:id/edit', to: 'fridges#edit'
+  # post 'fridges', to: 'fridges#create'
+  # put 'fridges/:id', to: 'fridges#update'
+  # delete 'fridges/:id', to: 'fridges#destroy'
+
+  resources :fridges
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
