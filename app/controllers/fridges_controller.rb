@@ -21,6 +21,9 @@ class FridgesController < ApplicationController
   end
 
   def update
+    @fridge_id = Fridge.find(params[:id])
+    @fridge = Fridge.find(params[:id]).update(fridge_params)
+    redirect_to "/fridges/#{@fridge_id}"
   end
 
   def destroy
@@ -28,7 +31,7 @@ class FridgesController < ApplicationController
 
   private
   def fridge_params
-    params.require(:fridge).permit(:brand, :location, :size, )
+    params.require(:fridge).permit(:brand, :location, :size)
   end
 
 end
